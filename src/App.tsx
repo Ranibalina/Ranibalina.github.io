@@ -302,7 +302,7 @@ export default function App() {
             <h2 className="text-4xl font-bold mb-12">Certifications</h2>
             <div className="space-y-4">
               {[
-                { name: "Fabric Data Engineering Associate", link: "https://learn.microsoft.com/en-us/credentials/certifications/fabric-data-engineer-associate/" },
+                { name: "Fabric Data Engineering Associate", link: "https://learn.microsoft.com/api/credentials/share/en-us/JansiRaniBalina-3334/357F6B06DB410CF?sharingId=B0434CD6B4A39026" },
                 { name: "Power BI Data Analyst Associate", link: "#" },
                 { name: "Snowpro Core Certification", link: "https://achieve.snowflake.com/a9bac03e-b847-4ae9-a8cf-83b055140b3c#acc.pxfyoFbZ" },
                 { name: "Matillion ETL Specialist", link: "#" }
