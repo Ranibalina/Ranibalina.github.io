@@ -305,7 +305,7 @@ export default function App() {
                 { name: "Fabric Data Engineering Associate", link: "https://learn.microsoft.com/en-us/credentials/certifications/fabric-data-engineer-associate/" },
                 { name: "Power BI Data Analyst Associate", link: "#" },
                 { name: "Snowpro Core Certification", link: "https://achieve.snowflake.com/a9bac03e-b847-4ae9-a8cf-83b055140b3c#acc.pxfyoFbZ" },
-                { name: "Matillion ETL Specialist", link: "#" }
+                { name: "Matillion ETL Specialist", link: "https://www.credly.com/badges/8121383a-7fb3-45d4-84a8-dff6e14839f8/public_url" }
               ].map((cert, i) => (
                 <motion.div
                   key={i}
