@@ -1,16 +1,16 @@
 import { motion, AnimatePresence } from "motion/react";
-import { 
-  Mail, 
-  Phone, 
-  Linkedin, 
-  MapPin, 
-  Calendar, 
-  Database, 
-  Layout, 
-  Code2, 
-  Cloud, 
-  Settings, 
-  Award, 
+import {
+  Mail,
+  Phone,
+  Linkedin,
+  MapPin,
+  Calendar,
+  Database,
+  Layout,
+  Code2,
+  Cloud,
+  Settings,
+  Award,
   GraduationCap,
   ExternalLink,
   ChevronRight,
@@ -103,7 +103,7 @@ export default function App() {
       {/* Navigation */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "py-4 glass" : "py-8 bg-transparent"}`}>
         <div className="max-w-7xl mx-auto px-8 flex justify-between items-center">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: -0 }}
             className="flex items-center gap-2"
@@ -117,7 +117,7 @@ export default function App() {
             <a href="#experience" className="nav-link">Experience</a>
             <a href="#contact" className="nav-link">Contact</a>
           </div>
-          <motion.button 
+          <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-zinc-900 text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-emerald-600 transition-colors"
@@ -156,7 +156,7 @@ export default function App() {
                 <ArrowUpRight size={18} className="text-zinc-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
               <div className="flex gap-2">
-                <a href="#" className="w-14 h-14 flex items-center justify-center rounded-2xl bg-white border border-zinc-200 hover:border-emerald-500 transition-all text-zinc-400 hover:text-emerald-500">
+                <a href="http://www.linkedin.com/in/rani5788" target="_blank" rel="noopener noreferrer" className="w-14 h-14 flex items-center justify-center rounded-2xl bg-white border border-zinc-200 hover:border-emerald-500 transition-all text-zinc-400 hover:text-emerald-500">
                   <Linkedin size={24} />
                 </a>
                 <a href="#" className="w-14 h-14 flex items-center justify-center rounded-2xl bg-white border border-zinc-200 hover:border-emerald-500 transition-all text-zinc-400 hover:text-emerald-500">
@@ -166,7 +166,7 @@ export default function App() {
             </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
@@ -213,7 +213,7 @@ export default function App() {
             <span className="section-label">Expertise</span>
             <h2 className="text-4xl font-bold tracking-tight">Technical Arsenal</h2>
           </div>
-          <motion.div 
+          <motion.div
             variants={staggerContainer}
             initial="initial"
             whileInView="whileInView"
@@ -221,8 +221,8 @@ export default function App() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {skills.map((skill, i) => (
-              <motion.div 
-                key={i} 
+              <motion.div
+                key={i}
                 variants={fadeIn}
                 className="bento-card group"
               >
@@ -252,7 +252,7 @@ export default function App() {
           </div>
           <div className="space-y-6">
             {experience.map((exp, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 variants={fadeIn}
                 initial="initial"
@@ -305,7 +305,7 @@ export default function App() {
                 "Snowpro Core Certification",
                 "Matillion ETL Specialist"
               ].map((cert, i) => (
-                <motion.div 
+                <motion.div
                   key={i}
                   whileHover={{ x: 10 }}
                   className="flex items-center justify-between p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all cursor-default"
@@ -348,7 +348,7 @@ export default function App() {
 
       {/* Contact Section */}
       <section id="contact" className="py-40 px-8 text-center">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -364,7 +364,7 @@ export default function App() {
             <a href="mailto:ranibalina1@gmail.com" className="bg-emerald-500 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-emerald-600 transition-all hover:shadow-xl hover:shadow-emerald-500/20">
               Send an email
             </a>
-            <a href="#" className="bg-white border border-zinc-200 text-zinc-900 px-10 py-5 rounded-2xl font-bold text-lg hover:border-emerald-500 transition-all">
+            <a href="http://www.linkedin.com/in/rani5788" target="_blank" rel="noopener noreferrer" className="bg-white border border-zinc-200 text-zinc-900 px-10 py-5 rounded-2xl font-bold text-lg hover:border-emerald-500 transition-all">
               LinkedIn
             </a>
           </div>
@@ -382,7 +382,7 @@ export default function App() {
             © {new Date().getFullYear()} Designed & Built with precision.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-zinc-400 hover:text-zinc-900 transition-colors"><Linkedin size={20} /></a>
+            <a href="http://www.linkedin.com/in/rani5788" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-zinc-900 transition-colors"><Linkedin size={20} /></a>
             <a href="#" className="text-zinc-400 hover:text-zinc-900 transition-colors"><Github size={20} /></a>
             <a href="#" className="text-zinc-400 hover:text-zinc-900 transition-colors"><Mail size={20} /></a>
           </div>
