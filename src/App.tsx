@@ -302,7 +302,7 @@ export default function App() {
             <h2 className="text-4xl font-bold mb-12">Certifications</h2>
             <div className="space-y-4">
               {[
-                { name: "Fabric Data Engineering Associate", link: "https://learn.microsoft.com/api/credentials/share/en-us/JansiRaniBalina-3334/357F6B06DB410CF?sharingId=B0434CD6B4A39026" },
+                { name: "Fabric Data Engineering Associate", link: "https://learn.microsoft.com/en-us/credentials/certifications/fabric-data-engineer-associate/" },
                 { name: "Power BI Data Analyst Associate", link: "#" },
                 { name: "Snowpro Core Certification", link: "https://achieve.snowflake.com/a9bac03e-b847-4ae9-a8cf-83b055140b3c#acc.pxfyoFbZ" },
                 { name: "Matillion ETL Specialist", link: "#" }
@@ -310,23 +310,25 @@ export default function App() {
                 <motion.div
                   key={i}
                   whileHover={{ x: 10 }}
-                  className="flex items-center justify-between p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all cursor-default"
+                  className="flex items-center justify-between p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all cursor-default group/cert"
                 >
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400">
+                  <button
+                    onClick={() => cert.link !== "#" && setSelectedCert(cert)}
+                    className="flex items-center gap-4 flex-1 text-left"
+                    disabled={cert.link === "#"}
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover/cert:bg-emerald-500 group-hover/cert:text-white transition-colors">
                       <Award size={20} />
                     </div>
                     <span className="font-medium">{cert.name}</span>
-                  </div>
-                  {cert.link !== "#" ? (
+                  </button>
+                  {cert.link !== "#" && (
                     <button
                       onClick={() => setSelectedCert(cert)}
                       className="text-white/20 hover:text-emerald-400 transition-colors"
                     >
                       <ExternalLink size={16} />
                     </button>
-                  ) : (
-                    <ExternalLink size={16} className="text-white/20" />
                   )}
                 </motion.div>
               ))}
