@@ -158,9 +158,12 @@ export default function App() {
                 <ArrowUpRight size={18} className="text-zinc-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
               <div className="flex gap-2">
-                <a href="http://www.linkedin.com/in/rani5788" target="_blank" rel="noopener noreferrer" className="w-14 h-14 flex items-center justify-center rounded-2xl bg-white border border-zinc-200 hover:border-emerald-500 transition-all text-zinc-400 hover:text-emerald-500">
+                <button
+                  onClick={() => setSelectedCert({ name: "LinkedIn Profile", link: "https://www.linkedin.com/in/rani5788" })}
+                  className="w-14 h-14 flex items-center justify-center rounded-2xl bg-white border border-zinc-200 hover:border-emerald-500 transition-all text-zinc-400 hover:text-emerald-500"
+                >
                   <Linkedin size={24} />
-                </a>
+                </button>
                 <a href="#" className="w-14 h-14 flex items-center justify-center rounded-2xl bg-white border border-zinc-200 hover:border-emerald-500 transition-all text-zinc-400 hover:text-emerald-500">
                   <Github size={24} />
                 </a>
@@ -377,9 +380,12 @@ export default function App() {
             <a href="mailto:ranibalina1@gmail.com" className="bg-emerald-500 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-emerald-600 transition-all hover:shadow-xl hover:shadow-emerald-500/20">
               Send an email
             </a>
-            <a href="http://www.linkedin.com/in/rani5788" target="_blank" rel="noopener noreferrer" className="bg-white border border-zinc-200 text-zinc-900 px-10 py-5 rounded-2xl font-bold text-lg hover:border-emerald-500 transition-all">
+            <button
+              onClick={() => setSelectedCert({ name: "LinkedIn Profile", link: "https://www.linkedin.com/in/rani5788" })}
+              className="bg-white border border-zinc-200 text-zinc-900 px-10 py-5 rounded-2xl font-bold text-lg hover:border-emerald-500 transition-all"
+            >
               LinkedIn
-            </a>
+            </button>
           </div>
         </motion.div>
       </section>
@@ -395,7 +401,12 @@ export default function App() {
             © {new Date().getFullYear()} Designed & Built with precision.
           </p>
           <div className="flex gap-6">
-            <a href="http://www.linkedin.com/in/rani5788" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-zinc-900 transition-colors"><Linkedin size={20} /></a>
+            <button
+              onClick={() => setSelectedCert({ name: "LinkedIn Profile", link: "https://www.linkedin.com/in/rani5788" })}
+              className="text-zinc-400 hover:text-zinc-900 transition-colors"
+            >
+              <Linkedin size={20} />
+            </button>
             <a href="#" className="text-zinc-400 hover:text-zinc-900 transition-colors"><Github size={20} /></a>
             <a href="#" className="text-zinc-400 hover:text-zinc-900 transition-colors"><Mail size={20} /></a>
           </div>
@@ -451,15 +462,19 @@ export default function App() {
                 {/* Fallback & Loading Overlay (Some sites block iframes) */}
                 <div className="absolute inset-0 pointer-events-none flex flex-col items-center justify-center p-12 text-center">
                   <div className="bg-white/80 backdrop-blur-md p-8 rounded-3xl shadow-xl max-w-md pointer-events-auto">
-                    <h4 className="text-lg font-bold text-zinc-900 mb-2">Viewing Certification</h4>
-                    <p className="text-sm text-zinc-500 mb-6">If the credential doesn't load below, you can view it directly on the provider's website.</p>
+                    <h4 className="text-lg font-bold text-zinc-900 mb-2">
+                      Viewing {selectedCert.name.includes("LinkedIn") ? "Profile" : "Certification"}
+                    </h4>
+                    <p className="text-sm text-zinc-500 mb-6">
+                      If the content doesn't load below, you can view it directly on the official website.
+                    </p>
                     <a
                       href={selectedCert.link}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 bg-emerald-500 text-white px-6 py-3 rounded-xl font-bold hover:bg-emerald-600 transition-all"
                     >
-                      View on Microsoft <ExternalLink size={16} />
+                      View on {selectedCert.name.includes("LinkedIn") ? "LinkedIn" : (selectedCert.link.includes("microsoft") ? "Microsoft" : "Provider")} <ExternalLink size={16} />
                     </a>
                   </div>
                 </div>
