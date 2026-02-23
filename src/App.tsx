@@ -164,7 +164,7 @@ export default function App() {
                 >
                   <Linkedin size={24} />
                 </button>
-                <a href="#" className="w-14 h-14 flex items-center justify-center rounded-2xl bg-white border border-zinc-200 hover:border-emerald-500 transition-all text-zinc-400 hover:text-emerald-500">
+                <a href="https://github.com/Ranibalina" target="_blank" rel="noopener noreferrer" className="w-14 h-14 flex items-center justify-center rounded-2xl bg-white border border-zinc-200 hover:border-emerald-500 transition-all text-zinc-400 hover:text-emerald-500">
                   <Github size={24} />
                 </a>
               </div>
@@ -407,8 +407,8 @@ export default function App() {
             >
               <Linkedin size={20} />
             </button>
-            <a href="#" className="text-zinc-400 hover:text-zinc-900 transition-colors"><Github size={20} /></a>
-            <a href="#" className="text-zinc-400 hover:text-zinc-900 transition-colors"><Mail size={20} /></a>
+            <a href="https://github.com/Ranibalina" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-zinc-900 transition-colors"><Github size={20} /></a>
+            <a href="mailto:ranibalina1@gmail.com" className="text-zinc-400 hover:text-zinc-900 transition-colors"><Mail size={20} /></a>
           </div>
         </div>
       </footer>
