@@ -20,8 +20,7 @@ import {
   Workflow,
   BarChart3,
   Globe,
-  Github,
-  X
+  Github
 } from "lucide-react";
 import { useState, useEffect } from "react";
 
@@ -44,7 +43,6 @@ const staggerContainer = {
 
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
-  const [selectedCert, setSelectedCert] = useState<{ name: string, link: string } | null>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -158,12 +156,14 @@ export default function App() {
                 <ArrowUpRight size={18} className="text-zinc-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
               <div className="flex gap-2">
-                <button
-                  onClick={() => setSelectedCert({ name: "LinkedIn Profile", link: "https://www.linkedin.com/in/rani5788" })}
+                <a
+                  href="https://www.linkedin.com/in/rani5788"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-14 h-14 flex items-center justify-center rounded-2xl bg-white border border-zinc-200 hover:border-emerald-500 transition-all text-zinc-400 hover:text-emerald-500"
                 >
                   <Linkedin size={24} />
-                </button>
+                </a>
                 <a href="https://github.com/Ranibalina" target="_blank" rel="noopener noreferrer" className="w-14 h-14 flex items-center justify-center rounded-2xl bg-white border border-zinc-200 hover:border-emerald-500 transition-all text-zinc-400 hover:text-emerald-500">
                   <Github size={24} />
                 </a>
@@ -315,24 +315,25 @@ export default function App() {
                   whileHover={{ x: 10 }}
                   className="flex items-center justify-between p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all cursor-default group/cert"
                 >
-                  <button
-                    onClick={() => cert.link !== "#" && setSelectedCert(cert)}
+                  <a
+                    href={cert.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-4 flex-1 text-left"
-                    disabled={cert.link === "#"}
                   >
                     <div className="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover/cert:bg-emerald-500 group-hover/cert:text-white transition-colors">
                       <Award size={20} />
                     </div>
                     <span className="font-medium">{cert.name}</span>
-                  </button>
-                  {cert.link !== "#" && (
-                    <button
-                      onClick={() => setSelectedCert(cert)}
-                      className="text-white/20 hover:text-emerald-400 transition-colors"
-                    >
-                      <ExternalLink size={16} />
-                    </button>
-                  )}
+                  </a>
+                  <a
+                    href={cert.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white/20 hover:text-emerald-400 transition-colors"
+                  >
+                    <ExternalLink size={16} />
+                  </a>
                 </motion.div>
               ))}
             </div>
@@ -380,12 +381,14 @@ export default function App() {
             <a href="mailto:ranibalina1@gmail.com" className="bg-emerald-500 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-emerald-600 transition-all hover:shadow-xl hover:shadow-emerald-500/20">
               Send an email
             </a>
-            <button
-              onClick={() => setSelectedCert({ name: "LinkedIn Profile", link: "https://www.linkedin.com/in/rani5788" })}
+            <a
+              href="https://www.linkedin.com/in/rani5788"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-white border border-zinc-200 text-zinc-900 px-10 py-5 rounded-2xl font-bold text-lg hover:border-emerald-500 transition-all"
             >
               LinkedIn
-            </button>
+            </a>
           </div>
         </motion.div>
       </section>
@@ -401,88 +404,19 @@ export default function App() {
             © {new Date().getFullYear()} Designed & Built with precision.
           </p>
           <div className="flex gap-6">
-            <button
-              onClick={() => setSelectedCert({ name: "LinkedIn Profile", link: "https://www.linkedin.com/in/rani5788" })}
+            <a
+              href="https://www.linkedin.com/in/rani5788"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-zinc-400 hover:text-zinc-900 transition-colors"
             >
               <Linkedin size={20} />
-            </button>
+            </a>
             <a href="https://github.com/Ranibalina" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-zinc-900 transition-colors"><Github size={20} /></a>
             <a href="mailto:ranibalina1@gmail.com" className="text-zinc-400 hover:text-zinc-900 transition-colors"><Mail size={20} /></a>
           </div>
         </div>
       </footer>
-
-      {/* Certification Modal */}
-      <AnimatePresence>
-        {selectedCert && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8"
-          >
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setSelectedCert(null)}
-              className="absolute inset-0 bg-zinc-900/90 backdrop-blur-sm"
-            />
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative w-full max-w-5xl aspect-[4/3] bg-white rounded-3xl overflow-hidden shadow-2xl flex flex-col"
-            >
-              <div className="flex items-center justify-between p-6 border-b border-zinc-100">
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center text-white">
-                    <Award size={20} />
-                  </div>
-                  <h3 className="text-xl font-bold text-zinc-900">{selectedCert.name}</h3>
-                </div>
-                <button
-                  onClick={() => setSelectedCert(null)}
-                  className="w-10 h-10 rounded-full hover:bg-zinc-100 flex items-center justify-center text-zinc-400 hover:text-zinc-900 transition-colors"
-                >
-                  <X size={24} />
-                </button>
-              </div>
-
-              <div className="flex-1 bg-zinc-50 relative">
-                {/* Iframe for certification */}
-                <iframe
-                  src={selectedCert.link}
-                  className="w-full h-full border-none"
-                  title={selectedCert.name}
-                  loading="lazy"
-                />
-
-                {/* Fallback & Loading Overlay (Some sites block iframes) */}
-                <div className="absolute inset-0 pointer-events-none flex flex-col items-center justify-center p-12 text-center">
-                  <div className="bg-white/80 backdrop-blur-md p-8 rounded-3xl shadow-xl max-w-md pointer-events-auto">
-                    <h4 className="text-lg font-bold text-zinc-900 mb-2">
-                      Viewing {selectedCert.name.includes("LinkedIn") ? "Profile" : "Certification"}
-                    </h4>
-                    <p className="text-sm text-zinc-500 mb-6">
-                      If the content doesn't load below, you can view it directly on the official website.
-                    </p>
-                    <a
-                      href={selectedCert.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-emerald-500 text-white px-6 py-3 rounded-xl font-bold hover:bg-emerald-600 transition-all"
-                    >
-                      View on {selectedCert.name.includes("LinkedIn") ? "LinkedIn" : (selectedCert.link.includes("microsoft") ? "Microsoft" : "Provider")} <ExternalLink size={16} />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </div>
   );
 }
